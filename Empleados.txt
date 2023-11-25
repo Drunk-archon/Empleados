@@ -4,4 +4,4 @@ Juan, Gomez, 111111119, 01/02/1990, Direccion7, 76543210, juan@gmail.com, 01/01/
 Juan, Rodriguez, 22222222, 15/03/1985, Direccion8, 10987654, juan@hotmail.com, 02/02/2022, Especialista en Eventos, Marketing, Tiempo Completo, 6000
 Juan, Herrera, 33333333, 10/11/1988, Direccion9, 98765432, juan@yahoo.com, 03/03/2022, Analista de Mercado, Marketing, Medio Tiempo, 4800
 Juan, Torres, 44444444, 20/05/1995, Direccion10, 87654321, juan@outlook.com, 04/04/2022, Gerente de Ventas, Ventas, Tiempo Completo, 7000
-Juan, Vargas, 55555555, 05/09/1980, Direccion11, 65432109, juan@live.com, 05/05/2022, Especialista en Redes Sociales, Marketing, Medio Tiempo, 5500
+Juan, Vargas, 55555555, 05/09/1980, Direccion11, 65432109, juan@live.com, 05/05/2022, Especialista en Redes Sociales, Marketing, Medio Tiempo, 5500Jordy,vindas,604840811,12/12/1212,dasfa,12344556,gma.com,12/12/21,Representante de Ventas,Ventas,Medio Tiempo,122000

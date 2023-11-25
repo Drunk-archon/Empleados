@@ -63,11 +63,11 @@ public static boolean cedulaRegistrada(String cedula) {
 }
     
     public static List<String> obtenerPuestosDisponibles() {
-        return Arrays.asList("Responsable de ventas", "Responsable de marketing", "Director Ejecutivo", "Director de Recursos Humanos","Jefe de la empresa");
+        return Arrays.asList("", "", "", "","","");
     }
 
     public static List<String> obtenerDepartamentosDisponibles() {
-        return Arrays.asList("Ventas", "Marketing", "Gestion y administracion", "Recursos Humanos");
+        return Arrays.asList("Ventas", "Informática", "Recursos Humanos");
     }
 
     public static List<String> obtenerContratosDisponibles() {
@@ -178,8 +178,41 @@ public static boolean cedulaRegistrada(String cedula) {
     }
 
     return null; // Devuelve null si no se encuentra ningún empleado
+} 
+  
+  public static List<String> obtenerPuestosPorDepartamento(String departamento) {
+    List<String> puestos = new ArrayList<>();
+
+    // Aquí deberías implementar la lógica para obtener los puestos asociados al departamento
+    // Puedes cargar esto desde una base de datos o definirlo estáticamente
+
+    // Ejemplo: Definir puestos estáticamente para el departamento "Informática"
+    if (departamento.equals("Informática")) {
+        puestos.add("Responsable de Formación y Desarrollo");
+        puestos.add("Analista de Sistemas");
+        puestos.add("Ingeniero de Software");
+    }
+    // Ejemplo: Definir puestos estáticamente para el departamento "Recursos Humanos"
+    else if (departamento.equals("Recursos Humanos")) {
+        puestos.add("Reclutador");
+        puestos.add("Especialista en Capacitación");
+        puestos.add("Gestor de Personal");
+    }
+    // Ejemplo: Definir puestos estáticamente para el departamento "Ventas"
+    else if (departamento.equals("Ventas")) {
+        puestos.add("Representante de Ventas");
+        puestos.add("Ejecutivo de Cuentas");
+        puestos.add("Gerente de Ventas");
+    }
+    // Puedes continuar agregando más casos según tus necesidades
+
+    return puestos;
 }
+  
+  
+  
+  
 }
 
 
-    
+ 
