@@ -114,6 +114,11 @@ public class Agregar extends javax.swing.JFrame {
                 cedulaFocusLost(evt);
             }
         });
+        cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cedulaActionPerformed(evt);
+            }
+        });
 
         nacimiento.setText("Fecha de nacimiento");
         nacimiento.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -526,6 +531,10 @@ public class Agregar extends javax.swing.JFrame {
         Ingreso.setForeground(new Color(204, 204, 204));
     }
     }//GEN-LAST:event_IngresoFocusLost
+
+    private void cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cedulaActionPerformed
 
     
     

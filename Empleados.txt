@@ -1,6 +1,6 @@
-Juan,Perez,12345678,01/02/1990,Dirección1,12345678,juan@email.com,01/01/2022,Responsable de marketing,Marketing,Medio Tiempo,5000
-Carlos,Ruiz,34567890,28/11/1888,Dirección3,56789011,carlos@email.com,10/05/2023,Responsable de ventas,Ventas,Tiempo Completo,7000
-Juan, Gomez, 11111111, 01/02/1990, Direccion7, 76543210, juan@gmail.com, 01/01/2022, Coordinador de Publicidad, Marketing, Medio Tiempo, 5200
+Juan,Perez,123456789,01/02/1990,Dirección1,12345678,juan@email.com,01/01/2022,Responsable de marketing,Marketing,Medio Tiempo,5000
+Carlos,Ruiz,345678909,28/11/1888,Dirección3,56789011,carlos@email.com,10/05/2023,Responsable de ventas,Ventas,Tiempo Completo,7000
+Juan, Gomez, 111111119, 01/02/1990, Direccion7, 76543210, juan@gmail.com, 01/01/2022, Coordinador de Publicidad, Marketing, Medio Tiempo, 5200
 Juan, Rodriguez, 22222222, 15/03/1985, Direccion8, 10987654, juan@hotmail.com, 02/02/2022, Especialista en Eventos, Marketing, Tiempo Completo, 6000
 Juan, Herrera, 33333333, 10/11/1988, Direccion9, 98765432, juan@yahoo.com, 03/03/2022, Analista de Mercado, Marketing, Medio Tiempo, 4800
 Juan, Torres, 44444444, 20/05/1995, Direccion10, 87654321, juan@outlook.com, 04/04/2022, Gerente de Ventas, Ventas, Tiempo Completo, 7000

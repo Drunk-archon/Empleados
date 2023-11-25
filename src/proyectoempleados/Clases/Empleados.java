@@ -15,8 +15,15 @@ public class Empleados {
     private String puesto;
     private String departamento; 
     private String contrato;
-    private String salario;;
+    private String salario;
     
+    private int horasTrabajadas;
+    private int horasExtra;
+    private int ausencias;
+    private double seguroSocial;
+    private double aportePatronalCCSS;
+    private double leyProteccionTrabajador;
+    private double aportePatronalLPT;
     
 
     public Empleados(String Nombre, String Apellido, String cedula, String nacimiento, String dirección, String teléfono, String email, String fechadeingreso, String puesto, String departamento, String contrato, String salario) {
@@ -35,11 +42,9 @@ public class Empleados {
         
     }
 
-    
-
-    
-    
-  
+    public Empleados(String nombre, String apellido, String cedula, String fechadeingreso) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public String getNombre() {
         return Nombre;
@@ -143,7 +148,72 @@ public class Empleados {
             teléfono + "," + email + "," + fechadeingreso + "," + puesto + "," + departamento + "," +
             contrato + "," + salario;
 }
-    
-    
-    
+
+    public Empleados(int horasTrabajadas, int horasExtra, int ausencias, double retenciones, double aportePatronalCCSS, double leyProteccionTrabajador) {
+        this.horasTrabajadas = horasTrabajadas;
+        this.horasExtra = horasExtra;
+        this.ausencias = ausencias;
+        this.aportePatronalCCSS = aportePatronalCCSS;
+        this.leyProteccionTrabajador = leyProteccionTrabajador;
+    }
+
+    public int getHorasTrabajadas() {
+        return horasTrabajadas;
+    }
+
+    public void setHorasTrabajadas(int horasTrabajadas) {
+        this.horasTrabajadas = horasTrabajadas;
+    }
+
+    public int getHorasExtra() {
+        return horasExtra;
+    }
+
+    public void setHorasExtra(int horasExtra) {
+        this.horasExtra = horasExtra;
+    }
+
+    public int getAusencias() {
+        return ausencias;
+    }
+
+    public void setAusencias(int ausencias) {
+        this.ausencias = ausencias;
+    }
+
+
+
+    public double getSeguroSocial() {
+        return seguroSocial;
+    }
+
+    public void setSeguroSocial(double seguroSocial) {
+        this.seguroSocial = seguroSocial;
+    }
+
+    public double getAportePatronalCCSS() {
+        return aportePatronalCCSS;
+    }
+
+    public void setAportePatronalCCSS(double aportePatronalCCSS) {
+        this.aportePatronalCCSS = aportePatronalCCSS;
+    }
+
+    public double getLeyProteccionTrabajador() {
+        return leyProteccionTrabajador;
+    }
+
+    public void setLeyProteccionTrabajador(double leyProteccionTrabajador) {
+        this.leyProteccionTrabajador = leyProteccionTrabajador;
+    }
+
+    public double getAportePatronalLPT() {
+        return aportePatronalLPT;
+    }
+
+    public void setAportePatronalLPT(double aportePatronalLPT) {
+        this.aportePatronalLPT = aportePatronalLPT;
+    }
+
+ 
 }

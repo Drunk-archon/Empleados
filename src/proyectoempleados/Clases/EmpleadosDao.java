@@ -156,28 +156,30 @@ public static boolean cedulaRegistrada(String cedula) {
     
      
      
-      public static List<String> consultarEmpleados(String criterio, String valor) {
-        List<String> resultados = new ArrayList<>();
+  public static Empleados consultarEmpleados(String criterio, String valor) {
+    List<Empleados> resultados = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("Empleados.txt"))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                // Puedes ajustar los criterios según tus necesidades
-                String[] datos = linea.split(",");
-                if ("nombre".equalsIgnoreCase(criterio) && datos[0].equalsIgnoreCase(valor)) {
-                    resultados.add(linea);
-                } else if ("cedula".equalsIgnoreCase(criterio) && datos[2].equalsIgnoreCase(valor)) {
-                    resultados.add(linea);
-                }
-                // Agrega más condiciones según los criterios que necesites
+    try (BufferedReader br = new BufferedReader(new FileReader("Empleados.txt"))) {
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            // Puedes ajustar los criterios según tus necesidades
+            String[] datos = linea.split(",");
+            if ("nombre".equalsIgnoreCase(criterio) && datos[0].equalsIgnoreCase(valor)) {
+                // Utiliza el constructor de Empleados para crear una instancia
+                return new Empleados(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], datos[10], datos[11]);
+            } else if ("cedula".equalsIgnoreCase(criterio) && datos[2].equalsIgnoreCase(valor)) {
+                // Utiliza el constructor de Empleados para crear una instancia
+                return new Empleados(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], datos[10], datos[11]);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            // Agrega más condiciones según los criterios que necesites
         }
-
-        return resultados;
+    } catch (IOException e) {
+        e.printStackTrace();
     }
-    
-    
-    
+
+    return null; // Devuelve null si no se encuentra ningún empleado
 }
+}
+
+
+    
