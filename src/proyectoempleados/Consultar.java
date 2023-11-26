@@ -43,6 +43,7 @@ public class Consultar extends javax.swing.JFrame {
         tableModel.addColumn("Puesto");
         tableModel.addColumn("Departamento");
         tableModel.addColumn("Contrato");
+        tableModel.addColumn("Cargo Academico");
         tableModel.addColumn("Salario");
 
            try {

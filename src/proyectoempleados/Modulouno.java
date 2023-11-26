@@ -30,6 +30,7 @@ public class Modulouno extends javax.swing.JFrame {
         Tablemodel.addColumn("Puesto");
         Tablemodel.addColumn("Departamento");
         Tablemodel.addColumn("Contrato");
+        Tablemodel.addColumn("Rango academico");
         Tablemodel.addColumn("Salario");
 
            try {

@@ -15,6 +15,7 @@ public class Empleados {
     private String puesto;
     private String departamento; 
     private String contrato;
+    private String Academico;
     private String salario;
     
     private int horasTrabajadas;
@@ -26,7 +27,7 @@ public class Empleados {
     private double aportePatronalLPT;
     
 
-    public Empleados(String Nombre, String Apellido, String cedula, String nacimiento, String dirección, String teléfono, String email, String fechadeingreso, String puesto, String departamento, String contrato, String salario) {
+    public Empleados(String Nombre, String Apellido, String cedula, String nacimiento, String dirección, String teléfono, String email, String fechadeingreso, String puesto, String departamento, String contrato, String Academico ,String salario) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.cedula = cedula;
@@ -38,6 +39,7 @@ public class Empleados {
         this.puesto = puesto;
         this.departamento = departamento;
         this.contrato = contrato;
+        this.Academico= Academico;
         this.salario = salario;
         
     }
@@ -134,6 +136,14 @@ public class Empleados {
         this.contrato = contrato;
     }
 
+    public String getAcademico() {
+        return Academico;
+    }
+
+    public void setAcademico(String Academico) {
+        this.Academico = Academico;
+    }
+    
     public String getSalario() {
         return salario;
     }
@@ -146,7 +156,7 @@ public class Empleados {
     public String toString() {
     return Nombre + "," + Apellido + "," + cedula + "," + nacimiento + "," +dirección + "," +
             teléfono + "," + email + "," + fechadeingreso + "," + puesto + "," + departamento + "," +
-            contrato + "," + salario;
+            contrato + "," +Academico+","+ salario;
 }
 
     public Empleados(int horasTrabajadas, int horasExtra, int ausencias, double retenciones, double aportePatronalCCSS, double leyProteccionTrabajador) {

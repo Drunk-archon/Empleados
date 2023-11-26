@@ -74,6 +74,10 @@ public static boolean cedulaRegistrada(String cedula) {
         return Arrays.asList("Tiempo Completo", "Medio Tiempo", "Contrato Temporal", "Contrato por Proyecto");
     }
     
+     public static List<String> CargosAcademicos() {
+        return Arrays.asList("Trabajador en ocupacion no calificada", "Trabajador en ocupacion semicalificada", "Trabajador en ocupacion calificada", "Tecnico medio","Diplomado en educacion superior","Bachiller universitario","Licenciado universitario");
+    }
+    
     
      public static void actualizarEmpleado(String[] nuevosDatos) {
         String nombreArchivo = "Empleados.txt";
@@ -166,10 +170,10 @@ public static boolean cedulaRegistrada(String cedula) {
             String[] datos = linea.split(",");
             if ("nombre".equalsIgnoreCase(criterio) && datos[0].equalsIgnoreCase(valor)) {
                 // Utiliza el constructor de Empleados para crear una instancia
-                return new Empleados(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], datos[10], datos[11]);
+                return new Empleados(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], datos[10], datos[11],datos[12]);
             } else if ("cedula".equalsIgnoreCase(criterio) && datos[2].equalsIgnoreCase(valor)) {
                 // Utiliza el constructor de Empleados para crear una instancia
-                return new Empleados(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], datos[10], datos[11]);
+                return new Empleados(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], datos[10], datos[11],datos[12]);
             }
             // Agrega más condiciones según los criterios que necesites
         }
