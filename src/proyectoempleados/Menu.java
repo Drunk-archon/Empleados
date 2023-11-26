@@ -1,6 +1,8 @@
 
 package proyectoempleados;
 
+import IU.RegistroIncidencias;
+
 
 public class Menu extends javax.swing.JFrame {
 
@@ -80,6 +82,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("jButton4");
 
@@ -162,6 +169,12 @@ public class Menu extends javax.swing.JFrame {
             
         
     }//GEN-LAST:event_Metodo2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        RegistroIncidencias inci = new RegistroIncidencias();
+        inci.setVisible(true);
+        inci.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
    
     
