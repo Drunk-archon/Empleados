@@ -1,15 +1,16 @@
 555555555,2023-10-05,Justificada,2,Me dio lástima
-123456789,2023-10-20,Injustificada,3,.
-123456789,2023-10-01,Injustificada,1,.
+123456789,2023-10-20,Injustificada,8,.
+123456789,2023-10-01,Injustificada,8,.
 123456789,2023-10-07,Tardia,1,.
 333333333,2023-10-01,Justificada,4,justificó
-123456789,2023-10-06,Injustificada,5,.
-333333333,2023-10-30,Injustificada,3,.
+123456789,2023-10-06,Injustificada,8,.
+333333333,2023-10-30,Injustificada,8,.
 333333333,2023-10-07,Justificada,8,Tuvo que ir al hospital
 444444444,2023-10-07,Justificada,8,Se quedó viendo One Piece
-222232222,2023-10-03,Justificada,3,TArdeee
+222232222,2023-10-03,Justificada,8,TArdeee
 555555555,2023-10-06,Justificada,8,Dis que el gato se le comió la tarea
 345678901,2023-10-01,Tardia,4,.
-555555555,2023-11-01,Tardia,8,jijijija
 222232222,2023-10-01,Injustificada,8,Se quedó durmiendo
-123456789,2023-11-07,Tardia,3,3 horas tarde; terrible
+123456789,2023-11-26,Injustificada,8,No quiso venir porque le dolía el pie
+123456789,2023-11-08,Tardia,4,Llegó en pleno almuerzo
+333333333,2023-10-20,Tardia,2,tarde
