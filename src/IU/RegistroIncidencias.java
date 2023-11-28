@@ -17,6 +17,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
+import proyectoempleados.Menu;
 
 /**
  *
@@ -406,7 +407,12 @@ public class RegistroIncidencias extends javax.swing.JFrame {
         jLabel22.setForeground(new java.awt.Color(204, 204, 204));
         jLabel22.setText("REGISTRO DE FALTAS");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -507,7 +513,13 @@ public class RegistroIncidencias extends javax.swing.JFrame {
         llenarCamposPersonales(BottBuscar.getText()); //llama al método que llena los espacios en función de la cédula
     }//GEN-LAST:event_BottBuscarActionPerformed
 
-       private String obtenerDetallesFalta(String cedula, String fechaSeleccionada) {
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Menu menso = new Menu();
+        menso.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private String obtenerDetallesFalta(String cedula, String fechaSeleccionada) {
     String detalles = " ";
 
     try (BufferedReader br = new BufferedReader(new FileReader("Faltas.txt"))) {
@@ -590,17 +602,19 @@ private void llenarTablaFechas(List<String> fechas, List<String> horas, String m
 
     // Filtrar las fechas según el mes seleccionado
     List<String> fechasFiltradas = new ArrayList<>();
+        List<String> horasFiltradas = new ArrayList<>();
     for (int i = 0; i < fechas.size(); i++) {
         LocalDate fecha = LocalDate.parse(fechas.get(i));
         String nombreMes = obtenerNombreMes(fecha.getMonthValue());
         if (nombreMes.equalsIgnoreCase(mesSeleccionado)) {
             fechasFiltradas.add(fechas.get(i));
+            horasFiltradas.add(horas.get(i)); //el problema está en cómo está leyendo la lista de solo fechas
         }
     }
 
     // Agregar las fechas y horas filtradas a la tabla
     for (int i = 0; i < fechasFiltradas.size(); i++) {
-        modelo.addRow(new Object[]{fechasFiltradas.get(i), horas.get(i)});
+        modelo.addRow(new Object[]{fechasFiltradas.get(i), horasFiltradas.get(i)});
     }
         jTable1.repaint();
 

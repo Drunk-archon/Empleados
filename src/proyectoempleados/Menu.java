@@ -1,6 +1,7 @@
 
 package proyectoempleados;
 
+import IU.Departamentos;
 import IU.RegistroIncidencias;
 
 
@@ -81,16 +82,26 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("jButton3");
+        jButton3.setText("Incidencias");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("jButton4");
+        jButton4.setText("Reportes");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel2.setText("Por favor seleccione una opcion.");
@@ -134,11 +145,11 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(Metodo2)
                 .addGap(43, 43, 43)
                 .addComponent(jButton3)
-                .addGap(56, 56, 56)
-                .addComponent(jButton4)
-                .addGap(50, 50, 50)
+                .addGap(44, 44, 44)
                 .addComponent(jButton5)
-                .addGap(66, 66, 66)
+                .addGap(40, 40, 40)
+                .addComponent(jButton4)
+                .addGap(88, 88, 88)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -174,7 +185,18 @@ public class Menu extends javax.swing.JFrame {
         RegistroIncidencias inci = new RegistroIncidencias();
         inci.setVisible(true);
         inci.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Departamentos deps = new Departamentos();
+        deps.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
    
     

@@ -14,3 +14,4 @@
 123456789,2023-11-26,Injustificada,8,No quiso venir porque le dolía el pie
 123456789,2023-11-08,Tardia,4,Llegó en pleno almuerzo
 333333333,2023-10-20,Tardia,2,tarde
+123456789,2023-11-01,Tardia,3,.
