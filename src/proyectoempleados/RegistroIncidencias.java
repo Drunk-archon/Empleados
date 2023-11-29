@@ -1,9 +1,7 @@
 
 package proyectoempleados;
 
-import IU.AgregarFaltas;
-import IU.Justificaciones;
-import incidencias.Modulosdaoo;
+import proyectoempleados.Clases.Modulosdaoo;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,8 +15,10 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
+import proyectoempleados.AgregarFaltas;
+import proyectoempleados.Justificaciones;
+import proyectoempleados.Menu;
 
 /**
  *
@@ -26,6 +26,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class RegistroIncidencias extends javax.swing.JFrame {
 
+    private Map<String, List<String>> horasPorMes = new HashMap<>();
     DefaultTableModel modelo; //crea el modelo que se utilizará
     List<String> dates; // lista para almacenar las fechas del archivo
 
@@ -41,14 +42,13 @@ public class RegistroIncidencias extends javax.swing.JFrame {
         };
     
         modelo.addColumn("Fecha");  
-        modelo.addColumn("Horas");
 
-            jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            tblAusen.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
             jTable1MouseClicked(evt);
         }
     });
-        jTable1.setModel(modelo);
+        tblAusen.setModel(modelo);
         
         String month = (String) comboMonth.getSelectedItem();
         llenarDatosSegunMes(month);
@@ -90,7 +90,6 @@ public class RegistroIncidencias extends javax.swing.JFrame {
         belNombre = new javax.swing.JLabel();
         belTelefono = new javax.swing.JLabel();
         belingreso = new javax.swing.JLabel();
-        belDepartamento = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -101,12 +100,13 @@ public class RegistroIncidencias extends javax.swing.JFrame {
         belTardia = new javax.swing.JLabel();
         belTotal = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
-        belHoras = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblAusen = new javax.swing.JTable();
+        belDepartamento = new javax.swing.JLabel();
         belPuesto = new javax.swing.JLabel();
-        belMail = new javax.swing.JLabel();
+        belEmail = new javax.swing.JLabel();
+        belHoras = new javax.swing.JLabel();
         TextBuscar = new javax.swing.JTextField();
         BottBuscar = new javax.swing.JButton();
         comboMonth = new javax.swing.JComboBox<>();
@@ -228,37 +228,34 @@ public class RegistroIncidencias extends javax.swing.JFrame {
         jLabel20.setText("FALTAS TOTALES DEL MES");
         jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Fecha", "Horas inansistencia"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
         jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Horas descontadas:");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
-        belHoras.setFont(new java.awt.Font("Leelawadee", 1, 12)); // NOI18N
+        tblAusen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblAusen);
+
         belHoras.setForeground(new java.awt.Color(102, 102, 102));
-        belHoras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        belHoras.setText("0");
         belHoras.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -278,30 +275,18 @@ public class RegistroIncidencias extends javax.swing.JFrame {
                             .addComponent(belNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(belTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(belingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5))
-                                .addGap(12, 12, 12)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(belMail, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-                                    .addComponent(belDepartamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(belPuesto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(belHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(belDepartamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(belPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(217, 217, 217)
-                                .addComponent(BottAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(BottJustificar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(belEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                                .addGap(47, 47, 47))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(184, 184, 184)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -314,15 +299,41 @@ public class RegistroIncidencias extends javax.swing.JFrame {
                                     .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(54, 54, 54))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(belHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(77, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(BottAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BottJustificar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(belDepartamento))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(belPuesto))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(belEmail))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel1)
@@ -334,49 +345,38 @@ public class RegistroIncidencias extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
-                                    .addComponent(belingreso)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(belingreso))
+                                .addGap(58, 58, 58)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel6))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(belDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(belPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel5))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addComponent(belMail)))))
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 35, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(belHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                            .addComponent(belHoras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(42, 42, 42)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BottAgregar)
                     .addComponent(BottJustificar))
-                .addGap(28, 28, 28))
+                .addGap(38, 38, 38))
         );
+
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {belDepartamento, belEmail, belPuesto});
+
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {belHoras, jLabel7});
 
         TextBuscar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -430,7 +430,7 @@ public class RegistroIncidencias extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(47, Short.MAX_VALUE))
+                        .addContainerGap(50, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(TextBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -456,7 +456,7 @@ public class RegistroIncidencias extends javax.swing.JFrame {
                     .addComponent(comboMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -472,7 +472,7 @@ public class RegistroIncidencias extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
@@ -519,36 +519,36 @@ public class RegistroIncidencias extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-       private String obtenerDetallesFalta(String cedula, String fechaSeleccionada) {
-    String detalles = " ";
+    private String obtenerDetallesFalta(String cedula, String fechaSeleccionada) {
+        String detalles = " ";
 
-    try (BufferedReader br = new BufferedReader(new FileReader("Faltas.txt"))) {
-        String linea;
-        while ((linea = br.readLine()) != null) {
-            String[] elementos = linea.split(",");
-            if (elementos.length == 5 && elementos[0].equals(cedula) && elementos[1].equals(fechaSeleccionada)) {
-                // Verificar si el campo de detalles no está vacío antes de asignarlo
-                if (elementos[4].equals(".")) {
-                    detalles = "Nada que mostrar";
-                    
-                }else{
-                    detalles=elementos[4];
+        try (BufferedReader br = new BufferedReader(new FileReader("Faltas.txt"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] elementos = linea.split(",");
+                if (elementos.length == 5 && elementos[0].equals(cedula) && elementos[1].equals(fechaSeleccionada)) {
+                    // Verificar si el campo de detalles no está vacío antes de asignarlo
+                    if (elementos[4].equals(".")) {
+                        detalles = "Nada que mostrar";
+
+                    }else{
+                        detalles=elementos[4];
+                    }
+                    break; // Salir del bucle una vez que se haya encontrado la fecha
                 }
-                break; // Salir del bucle una vez que se haya encontrado la fecha
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
 
-    return detalles;
-}
+        return detalles;
+    }
     
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
         String ced = TextBuscar.getText();
-        int filaSeleccionada = jTable1.getSelectedRow();
+        int filaSeleccionada = tblAusen.getSelectedRow();
     if (filaSeleccionada != -1) {
-        String fechaSeleccionada = jTable1.getValueAt(filaSeleccionada, 0).toString();
+        String fechaSeleccionada = tblAusen.getValueAt(filaSeleccionada, 0).toString();
         String detalles = obtenerDetallesFalta(ced,fechaSeleccionada);
         JOptionPane.showMessageDialog(this, detalles, "Detalles de la falta", JOptionPane.INFORMATION_MESSAGE);
     }
@@ -573,32 +573,9 @@ public class RegistroIncidencias extends javax.swing.JFrame {
         return fechas;
     }
     
-    private List<String> obtenerHoras(String cedula) { //metodo para obtener todas las horas de faltas pertenecientes a la cedula, en el txt, como una lista
-        List<String> horas = new ArrayList<>();
-
-        try (BufferedReader br = new BufferedReader(new FileReader("Faltas.txt"))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                String[] elementos = linea.split(",");
-                if (elementos.length == 5 && elementos[0].equals(cedula)) {
-                    horas.add(elementos[3]);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return horas;
-    }
-    
-private void llenarTablaFechas(List<String> fechas, List<String> horas, String mesSeleccionado) {
+private void llenarTablaFechas(List<String> fechas, String mesSeleccionado) {
     // Limpiar la tabla antes de agregar nuevas fechas
     modelo.setRowCount(0);
-
-    //Se asegura de que la cantidad de fechas y horas sea la misma
-    if (fechas.size() != horas.size()) {
-        throw new IllegalArgumentException("La cantidad de fechas y horas no coincide.");
-    }
 
     // Filtrar las fechas según el mes seleccionado
     List<String> fechasFiltradas = new ArrayList<>();
@@ -610,13 +587,14 @@ private void llenarTablaFechas(List<String> fechas, List<String> horas, String m
         }
     }
 
-    // Agregar las fechas y horas filtradas a la tabla
+    // Agregar las fechas filtradas a la tabla
     for (int i = 0; i < fechasFiltradas.size(); i++) {
-        modelo.addRow(new Object[]{fechasFiltradas.get(i), horas.get(i)});
+        modelo.addRow(new Object[]{fechasFiltradas.get(i)});
     }
-        jTable1.repaint();
-
+    
+    tblAusen.repaint();
 }
+
 
     
        private void llenarCamposPersonales(String identificationNumber) { //llena los espacios personales según la cédula
@@ -634,7 +612,7 @@ private void llenarTablaFechas(List<String> fechas, List<String> horas, String m
                     // para que se muestren los datos del empleado
                     belNombre.setText(elementos[0] + " " + elementos[1]);
                     belTelefono.setText(elementos[5]);
-                    belMail.setText(elementos[6]);
+                    belEmail.setText(elementos[6]);
                     belingreso.setText(elementos[7]);
                     belPuesto.setText(elementos[8]);
                     belDepartamento.setText(elementos[9]);
@@ -645,8 +623,7 @@ private void llenarTablaFechas(List<String> fechas, List<String> horas, String m
             llenarFaltasSegunMes(identificationNumber, (String)comboMonth.getSelectedItem()); //aprovecha para llenar los espacios relacionados a las faltas, dependiendo del mes
             
                     List<String> fechas = obtenerFechas(identificationNumber); //si la cedula se encuentra, llenar la tabla con las fechas de sus faltas que están en esta lista
-                    List<String> horas = obtenerHoras(identificationNumber); //la lista de horas segun cedula se pasa a la tabla
-                    llenarTablaFechas(fechas, horas, (String)comboMonth.getSelectedItem()); //estos argumentos en forma de lista, llenan la primera y segunda columna respectivamente
+                    llenarTablaFechas(fechas, (String)comboMonth.getSelectedItem()); //estos argumentos en forma de lista, llenan la primera y segunda columna respectivamente
                     
                     //indicar que se encontró el empleado
                     encontrado = true;
@@ -658,7 +635,7 @@ private void llenarTablaFechas(List<String> fechas, List<String> horas, String m
             if (!encontrado) {
                     belNombre.setText("");
                     belTelefono.setText("");
-                    belMail.setText("");
+                    belEmail.setText("");
                     belingreso.setText("");
                     belPuesto.setText("");
                     belDepartamento.setText("");
@@ -744,10 +721,9 @@ private void llenarTablaFechas(List<String> fechas, List<String> horas, String m
     private void llenarDatosSegunMes(String mesSeleccionado) {
         // Obtener las fechas según el mes seleccionado
         List<String> fechas = obtenerFechas(mesSeleccionado);
-        List<String> horas = obtenerHoras(mesSeleccionado); 
 
         // Llenar la tabla con las fechas y horas
-        llenarTablaFechas(fechas, horas, (String)comboMonth.getSelectedItem());
+        llenarTablaFechas(fechas, (String)comboMonth.getSelectedItem());
 
         // Actualizar los JLabel con la información de faltas
         llenarFaltasSegunMes(TextBuscar.getText(), mesSeleccionado); 
@@ -876,9 +852,9 @@ private List<String> obtenerFechasMes(String identificationNumber, String mesSel
     private javax.swing.JButton BottJustificar;
     private javax.swing.JTextField TextBuscar;
     private javax.swing.JLabel belDepartamento;
+    private javax.swing.JLabel belEmail;
     private javax.swing.JLabel belHoras;
     private javax.swing.JLabel belJusti;
-    private javax.swing.JLabel belMail;
     private javax.swing.JLabel belNombre;
     private javax.swing.JLabel belPuesto;
     private javax.swing.JLabel belTardia;
@@ -904,7 +880,7 @@ private List<String> obtenerFechasMes(String identificationNumber, String mesSel
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblAusen;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,5 @@
 
-package incidencias;
+package proyectoempleados.Clases;
 
 import proyectoempleados.RegistroIncidencias;
 import java.io.BufferedReader;

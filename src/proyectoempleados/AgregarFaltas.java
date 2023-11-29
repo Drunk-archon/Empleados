@@ -1,8 +1,7 @@
 
-package IU;
+package proyectoempleados;
 
-import proyectoempleados.RegistroIncidencias;
-import incidencias.Modulosdaoo;
+import proyectoempleados.Clases.Modulosdaoo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;

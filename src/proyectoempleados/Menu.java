@@ -1,8 +1,6 @@
 
 package proyectoempleados;
 
-import IU.Departamentos;
-
 
 public class Menu extends javax.swing.JFrame {
 
