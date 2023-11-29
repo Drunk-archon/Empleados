@@ -213,8 +213,7 @@ public static boolean cedulaRegistrada(String cedula) {
     return puestos;
 }
   
-  
-  
+ 
   
 }
 

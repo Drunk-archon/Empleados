@@ -6,10 +6,10 @@ package proyectoempleados.Clases;
  * @author franc
  */
 public class CalculadoraPlanilla {
-     private Empleados empleado;
-
+    private Empleados empleado;
+   
     public CalculadoraPlanilla(Empleados empleado) {
-        this.empleado = empleado;
+        this.empleado = empleado;    
     }
 
     public double calcularAportePatronalCCSS() {
