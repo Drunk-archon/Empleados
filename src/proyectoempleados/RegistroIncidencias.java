@@ -1,6 +1,8 @@
 
-package IU;
+package proyectoempleados;
 
+import IU.AgregarFaltas;
+import IU.Justificaciones;
 import incidencias.Modulosdaoo;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -17,7 +19,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
-import proyectoempleados.Menu;
 
 /**
  *
@@ -114,7 +115,7 @@ public class RegistroIncidencias extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -487,7 +488,6 @@ public class RegistroIncidencias extends javax.swing.JFrame {
     private void BottJustificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottJustificarActionPerformed
         Justificaciones justif = new Justificaciones();
         justif.setVisible(true);
-        justif.setLocationRelativeTo(null);
         dispose();
     }//GEN-LAST:event_BottJustificarActionPerformed
 
@@ -514,12 +514,12 @@ public class RegistroIncidencias extends javax.swing.JFrame {
     }//GEN-LAST:event_BottBuscarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Menu menso = new Menu();
-        menso.setVisible(true);
+        Menu meee= new Menu();
+        meee.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private String obtenerDetallesFalta(String cedula, String fechaSeleccionada) {
+       private String obtenerDetallesFalta(String cedula, String fechaSeleccionada) {
     String detalles = " ";
 
     try (BufferedReader br = new BufferedReader(new FileReader("Faltas.txt"))) {
@@ -602,19 +602,17 @@ private void llenarTablaFechas(List<String> fechas, List<String> horas, String m
 
     // Filtrar las fechas según el mes seleccionado
     List<String> fechasFiltradas = new ArrayList<>();
-        List<String> horasFiltradas = new ArrayList<>();
     for (int i = 0; i < fechas.size(); i++) {
         LocalDate fecha = LocalDate.parse(fechas.get(i));
         String nombreMes = obtenerNombreMes(fecha.getMonthValue());
         if (nombreMes.equalsIgnoreCase(mesSeleccionado)) {
             fechasFiltradas.add(fechas.get(i));
-            horasFiltradas.add(horas.get(i)); //el problema está en cómo está leyendo la lista de solo fechas
         }
     }
 
     // Agregar las fechas y horas filtradas a la tabla
     for (int i = 0; i < fechasFiltradas.size(); i++) {
-        modelo.addRow(new Object[]{fechasFiltradas.get(i), horasFiltradas.get(i)});
+        modelo.addRow(new Object[]{fechasFiltradas.get(i), horas.get(i)});
     }
         jTable1.repaint();
 
@@ -632,7 +630,7 @@ private void llenarTablaFechas(List<String> fechas, List<String> horas, String m
             while ((linea = br.readLine()) != null) { // Iterar sobre cada línea del archivo.
                 String[] elementos = linea.split(","); 
                 // Verificar si hay al menos 12 elementos y, si el segundo elemento coincide con la cedula, se llenan los espacios personales
-                if (elementos.length == 12 && elementos[2].equals(identificationNumber)) {  
+                if (elementos.length >= 12 && elementos[2].equals(identificationNumber)) {  
                     // para que se muestren los datos del empleado
                     belNombre.setText(elementos[0] + " " + elementos[1]);
                     belTelefono.setText(elementos[5]);

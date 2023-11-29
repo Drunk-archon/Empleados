@@ -1,6 +1,7 @@
 
 package IU;
 
+import proyectoempleados.RegistroIncidencias;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -386,7 +387,7 @@ public class Justificaciones extends javax.swing.JFrame {
             
             while ((linea = br.readLine()) != null) { 
                 String[] elementos = linea.split(","); 
-                if (elementos.length == 12 && elementos[2].equals(identificationNumber)) {  
+                if (elementos.length == 13 && elementos[2].equals(identificationNumber)) {  
                     txtNombre.setText(elementos[0] + " " + elementos[1]);
                     txtDepa.setText(elementos[9]);
 

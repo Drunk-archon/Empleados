@@ -1,6 +1,7 @@
 
 package IU;
 
+import proyectoempleados.RegistroIncidencias;
 import incidencias.Modulosdaoo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -118,7 +119,7 @@ public class AgregarFaltas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
 
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
 
