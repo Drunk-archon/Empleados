@@ -30,7 +30,8 @@ String[] datosEmpleado = new String[12];
        puesto.setSelectedItem(datosEmpleado[8]);
        Departamento.setSelectedItem(datosEmpleado[9]);
        contrato.setSelectedItem(datosEmpleado[10]);
-       sueldo.setText(datosEmpleado[11]);
+       academico.setSelectedItem(datosEmpleado[11]);
+       sueldo.setText(datosEmpleado[12]);
 
     }
      
@@ -201,6 +202,12 @@ String[] datosEmpleado = new String[12];
 
         jLabel14.setText("Sueldo");
 
+        sueldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sueldoActionPerformed(evt);
+            }
+        });
+
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,7 +215,7 @@ String[] datosEmpleado = new String[12];
             }
         });
 
-        jLabel9.setText("Cargo academico");
+        jLabel9.setText("Cargo profesional");
 
         academico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         academico.addActionListener(new java.awt.event.ActionListener() {
@@ -265,15 +272,13 @@ String[] datosEmpleado = new String[12];
                                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel14))
                                 .addGap(37, 37, 37)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(sueldo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Telefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Ingreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(academico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(54, 54, 54)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Ingreso)
+                                    .addComponent(academico, 0, 159, Short.MAX_VALUE)
+                                    .addComponent(Email)
+                                    .addComponent(Telefono)
+                                    .addComponent(sueldo))
+                                .addGap(19, 19, 19)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -294,7 +299,7 @@ String[] datosEmpleado = new String[12];
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(58, 58, 58)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -400,7 +405,7 @@ String[] datosEmpleado = new String[12];
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       
-    String[] nuevosDatos = new String[12];
+    String[] nuevosDatos = new String[13];
     nuevosDatos[0] = Nombre.getText();
     nuevosDatos[1] = Apellidos.getText();
     nuevosDatos[2] = cedula.getText();
@@ -412,7 +417,8 @@ String[] datosEmpleado = new String[12];
     nuevosDatos[8] = (String) puesto.getSelectedItem();
     nuevosDatos[9] = (String) Departamento.getSelectedItem();
     nuevosDatos[10]=(String) contrato.getSelectedItem();
-    nuevosDatos[11] = sueldo.getText();
+    nuevosDatos[11]=(String) academico.getSelectedItem();
+    nuevosDatos[12] = sueldo.getText();
 
      if (Nombre.getText().isEmpty() || Apellidos.getText().isEmpty() || cedula.getText().isEmpty() ||
             Nacimiento.getText().isEmpty() || Direccion.getText().isEmpty() || Telefono.getText().isEmpty() ||
@@ -459,6 +465,10 @@ String[] datosEmpleado = new String[12];
     private void academicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_academicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_academicoActionPerformed
+
+    private void sueldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sueldoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sueldoActionPerformed
 
     /**
      * @param args the command line arguments

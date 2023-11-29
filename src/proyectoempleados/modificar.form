@@ -151,18 +151,14 @@
                                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="sueldo" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Telefono" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                                              <Component id="Email" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                                              <Component id="Ingreso" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="academico" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="Ingreso" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="academico" alignment="0" pref="159" max="32767" attributes="0"/>
+                                      <Component id="Email" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Telefono" max="32767" attributes="0"/>
+                                      <Component id="sueldo" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel11" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
                                       <Component id="jLabel13" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
@@ -191,7 +187,7 @@
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="39" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Telefono" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -465,6 +461,9 @@
         <Component class="javax.swing.JLabel" name="jLabel15">
         </Component>
         <Component class="javax.swing.JTextField" name="sueldo">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sueldoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
@@ -476,7 +475,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cargo academico"/>
+            <Property name="text" type="java.lang.String" value="Cargo profesional"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="academico">

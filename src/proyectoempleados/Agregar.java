@@ -13,8 +13,14 @@ import proyectoempleados.Clases.EmpleadosDao;
  */
 public class Agregar extends javax.swing.JFrame {
 
-    
-    
+
+   private static final double SALARIO_NO_CALIFICADO = 352464.91;
+    private static final double SALARIO_SEMICALIFICADO = 381433.12;
+    private static final double SALARIO_CALIFICADO = 396210.87;
+    private static final double SALARIO_TECNICO_MEDIO = 415200.76;
+    private static final double SALARIO_ESPECIALIZADO = 452407.20;
+    private static final double SALARIO_BACHILLER = 626828.55;
+    private static final double SALARIO_LICENCIADO = 752220.04;
     
     public Agregar() {
         initComponents();
@@ -22,12 +28,31 @@ public class Agregar extends javax.swing.JFrame {
         
     }
      
-    
-    
-    
-    
-    
-    
+        private double asignarSalarioSegunCategoria(String categoria) {
+        // Normaliza la cadena eliminando espacios al principio y al final
+        categoria = categoria.trim();
+
+        // Devuelve el salario mínimo según la categoría académica
+        switch (categoria) {
+            case "Trabajador en ocupacion no calificada":
+                return SALARIO_NO_CALIFICADO;
+            case "Trabajador en ocupacion semicalificada":
+                return SALARIO_SEMICALIFICADO;
+            case "Trabajador en ocupacion calificada":
+                return SALARIO_CALIFICADO;
+            case "Tecnico medio":
+                return  SALARIO_TECNICO_MEDIO;
+            case "Diplomado en educacion superior":
+                return  SALARIO_ESPECIALIZADO;
+            case "Bachiller universitario":
+                return  SALARIO_BACHILLER;
+            case "Licenciado universitario":
+                return  SALARIO_LICENCIADO;    
+            default:
+           
+                return 0.0;
+        }
+    }
     
     
     private void llenarComboBox() {
@@ -44,7 +69,6 @@ public class Agregar extends javax.swing.JFrame {
      academico.setModel(new javax.swing.DefaultComboBoxModel<>(EmpleadosDao.CargosAcademicos().toArray(new String[0])));
     
 }
-    
     
    
     @SuppressWarnings("unchecked")
@@ -77,6 +101,7 @@ public class Agregar extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         academico = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -259,6 +284,13 @@ public class Agregar extends javax.swing.JFrame {
 
         jLabel8.setText("Salario recomendado");
 
+        jButton3.setText("Generar salario");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -295,19 +327,24 @@ public class Agregar extends javax.swing.JFrame {
                                             .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(40, 40, 40)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)))
-                                .addGap(67, 67, 67)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(contrato, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Departamento, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(puesto, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(academico, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sueldo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(67, 67, 67)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(contrato, javax.swing.GroupLayout.Alignment.TRAILING, 0, 190, Short.MAX_VALUE)
+                                            .addComponent(Departamento, javax.swing.GroupLayout.Alignment.TRAILING, 0, 190, Short.MAX_VALUE)
+                                            .addComponent(puesto, javax.swing.GroupLayout.Alignment.TRAILING, 0, 190, Short.MAX_VALUE)
+                                            .addComponent(academico, javax.swing.GroupLayout.Alignment.TRAILING, 0, 190, Short.MAX_VALUE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                            .addComponent(sueldo)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(0, 0, Short.MAX_VALUE)))
@@ -357,11 +394,13 @@ public class Agregar extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(academico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -399,7 +438,9 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_DireccionActionPerformed
 
     private void sueldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sueldoActionPerformed
-        // TODO add your handling code here:
+       
+        
+       
     }//GEN-LAST:event_sueldoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -582,6 +623,16 @@ public class Agregar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_academicoActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       String categoria = (String) academico.getSelectedItem();
+
+        // Asigna el salario según la categoría académica
+        double salarioRecomendado = asignarSalarioSegunCategoria(categoria);
+
+        // Muestra el salario recomendado en el campo de texto
+        sueldo.setText(String.valueOf(salarioRecomendado));
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     
     
     
@@ -625,6 +676,7 @@ public class Agregar extends javax.swing.JFrame {
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
