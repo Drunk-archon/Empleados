@@ -264,8 +264,8 @@ public class Modulouno extends javax.swing.JFrame {
    private String[] obtenerDatosEmpleadoSeleccionado() {
     int filaSeleccionada = Emplea.getSelectedRow();
     if (filaSeleccionada != -1) {
-        String[] datosEmpleado = new String[12]; // Ajusta el tamaño según la cantidad de columnas
-        for (int i = 0; i < 12; i++) {
+        String[] datosEmpleado = new String[13]; // Ajusta el tamaño según la cantidad de columnas
+        for (int i = 0; i < 13; i++) {
             datosEmpleado[i] = (String) Emplea.getValueAt(filaSeleccionada, i);
         }
         return datosEmpleado;

@@ -1,8 +1,9 @@
-Juan,Perez,123456789,01/02/1990,Dirección1,12345678,juan34@email.com,01/01/2022,Responsable de marketing,Marketing,Medio Tiempo,5000
-Carlos,Ruiz,345678901,28/11/1888,Dirección3,56789011,carlos@email.com,10/05/2023,Responsable de ventas,Ventas,Tiempo Completo,7000
-Julian,Gomez,111111112,01/02/1990,Direccion7,76543210,juliann23@gmail.com,01/01/2022,Coordinador de Publicidad,Marketing,Medio Tiempo,5200
-Enrique,Rodriguez,222232222,15/03/1985,Direccion8,10987654,riqui@hotmail.com,02/02/2022,Especialista en Eventos,Marketing,Tiempo Completo,6000
-Mariana,Herrera,333333333,10/11/1988,Direccion9,98765432,maripiri@yahoo.com,03/03/2022,Analista de Mercado,Marketing,Medio Tiempo,4800
-Kevin,Torres,444444444,20/05/1995,Direccion10,87654321,vin44@outlook.com,04/04/2022,Gerente de Ventas,Ventas,Tiempo Completo,7000
-Ignacia,Vargas,555555555,05/09/1980,Direccion11,65432109,navag505@live.com,05/05/2022,Especialista en Redes Sociales,Marketing,Medio Tiempo,5500
-Jordy,Vindas,604840811,12/12/1212,dasfa,12344556,gma.com,12/12/21,Representante de Ventas,Ventas,Medio Tiempo,122000
+Juan,Perez,123456789,01/02/1990,Dirección1,12345678,juan34@email.com,01/01/2022,Ingeniero de Software,Informática,Contrato Temporal,Trabajador en ocupacion calificada,12312231
+Carlos,Ruiz,345678901,28/11/1888,Dirección3,56789011,carlos@email.com,10/05/2023,Representante de Ventas,Ventas,Tiempo Completo,Trabajador en ocupacion no calificada,123445
+Julian,Gomez,111111112,01/02/1990,Direccion7,76543210,juliann23@gmail.com,01/01/2022,Especialista en Capacitación,Recursos Humanos,Contrato por Proyecto,Licenciado universitario,12345654
+Enrique,Rodriguez,222232222,15/03/1985,Direccion8,10987654,riqui@hotmail.com,02/02/2022,Ingeniero de Software,Informática,Contrato por Proyecto,Tecnico medio,1231313
+Mariana,Herrera,333333333,10/11/1988,Direccion9,98765432,maripiri@yahoo.com,03/03/2022,Responsable de Formación y Desarrollo,Informática,Contrato Temporal,Trabajador en ocupacion no calificada,1110000
+Kevin,Torres,444444444,20/05/1995,Direccion10,87654321,vin44@outlook.com,04/04/2022,Analista de Sistemas,Informática,Contrato por Proyecto,Tecnico medio,2000000
+Ignacia,Vargas,555555555,05/09/1980,Direccion11,65432109,navag505@live.com,05/05/2022,Especialista en Capacitación,Recursos Humanos,Contrato Temporal,Bachiller universitario,200033
+Jordy,Vindas,604840811,12/12/1212,dasfa,12344556,gma.com,12/12/21,Gestor de Personal,Recursos Humanos,Contrato por Proyecto,Trabajador en ocupacion semicalificada,12000
+Jordy,Vindas,604840817,12/12/2123,En tu corazon,12345678,Jordy.vindash,12/12/3221,Analista de Sistemas,Informática,Medio Tiempo,Tecnico medio,415200.76

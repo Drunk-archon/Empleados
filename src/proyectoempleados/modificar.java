@@ -8,7 +8,7 @@ import proyectoempleados.Clases.EmpleadosDao;
 
 public class modificar extends javax.swing.JFrame {
 
-String[] datosEmpleado = new String[12];
+String[] datosEmpleado = new String[13];
 
     public modificar(String[] datosEmpleado) {
         initComponents();
