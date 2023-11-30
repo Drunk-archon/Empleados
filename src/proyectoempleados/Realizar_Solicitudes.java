@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package proyectoempleados;
 
 /**
@@ -12,9 +9,8 @@ public class Realizar_Solicitudes extends javax.swing.JFrame {
     private String Empleado;
     private String Cedula;
     private String Area;
-    /**
-     * Creates new form Realizar_Solicitudes
-     */
+   
+    
     public Realizar_Solicitudes(String Empleado, String Cedula, String Area) {
         this.Empleado= Empleado;
         this.Cedula= Cedula;

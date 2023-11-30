@@ -1,0 +1,8 @@
+Informática,15 de Enero - 1 de Febrero
+Informática,1 de Agosto - 15 de Agosto
+Recursos Humanos,15 de Diciembre - 1 de Enero
+Recursos Humanos,1 de Julio - 15 de Julio
+Ventas,1 de Octubre - 15 de Octubre
+Ventas,15 de Abril - 1 de mayo
+
+Informática,15 de Octubre - 1 de Noviembre
