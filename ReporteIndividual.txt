@@ -1,0 +1,19 @@
+Mes del reporte: Noviembre de 2023
+Cédula: 123456789
+Nombre: Juan
+Puesto: Ingeniero de Software
+Fecha: 01/01/2022
+Horas Trabajadas: 145
+Horas No Trabajadas: 15
+Horas Justificadas: 0
+Retenciones: 4072886,01
+Aporte Banco Popular: 30780,58
+Aporte Fondo Capitalización: 369366,93
+Aporte Fondo Pensiones: 61561,16
+Invalidez Vejez Muerte: 625461,33
+Seguro Enfermedad Maternidad: 1138881,37
+Aporte INS: 1846834,65
+Salario Por Hora: 76951,44
+Salario Bruto: 12312231,00
+Total Deducciones: 5227157,67
+Salario Neto: 7085073,33

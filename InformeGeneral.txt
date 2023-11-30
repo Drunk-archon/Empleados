@@ -1,0 +1,11 @@
+Informe generado en: Noviembre de 2023
+Cédula,Nombre,Apellido,Fch. Ingreso,Puesto,Departamento,Crg. Académico,Hrs. No Trabajadas,Hrs. Justificadas,Hrs. Trabajadas,CCSS,LPT,Salario Bruto,Rebajo Salarial,Salario Neto
+123456789,Juan,Perez,01/01/2022,Ingeniero de Software,Informática,Trabajador en ocupacion calificada,15,0,145,1764342,70,584830,97,12312231,00,3503445,33,8808785,67
+345678901,Carlos,Ruiz,10/05/2023,Representante de Ventas,Ventas,Trabajador en ocupacion no calificada,0,0,160,17689,67,5863,64,123445,00,23553,31,99891,69
+111111112,Julian,Gomez,01/01/2022,Especialista en Capacitación,Recursos Humanos,Licenciado universitario,0,0,160,1769132,22,586418,57,12345654,00,2355550,78,9990103,22
+222232222,Enrique,Rodriguez,02/02/2022,Ingeniero de Software,Informática,Tecnico medio,0,0,160,176447,15,58487,37,1231313,00,234934,52,996378,48
+333333333,Mariana,Herrera,03/03/2022,Responsable de Formación y Desarrollo,Informática,Trabajador en ocupacion no calificada,1,0,159,159063,00,52725,00,1110000,00,218725,50,891274,50
+444444444,Kevin,Torres,04/04/2022,Analista de Sistemas,Informática,Tecnico medio,0,0,160,286600,00,95000,00,2000000,00,381600,00,1618400,00
+555555555,Ignacia,Vargas,05/05/2022,Especialista en Capacitación,Recursos Humanos,Bachiller universitario,0,0,160,28664,73,9501,57,200033,00,38166,30,161866,70
+604840811,Jordy,Vindas,12/12/21,Gestor de Personal,Recursos Humanos,Trabajador en ocupacion semicalificada,0,0,160,1719,60,570,00,12000,00,2289,60,9710,40
+604840817,Jordy,Vindas,12/12/3221,Analista de Sistemas,Informática,Tecnico medio,0,0,160,59498,27,19722,04,415200,76,79220,31,335980,45

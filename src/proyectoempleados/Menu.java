@@ -1,12 +1,15 @@
 
 package proyectoempleados;
 
+import IU.Escala;
+
 
 public class Menu extends javax.swing.JFrame {
 
     
     public Menu() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
   
@@ -185,8 +188,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Departamentos deps = new Departamentos();
-        deps.setVisible(true);
+        Escala esc = new Escala();
+        esc.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
