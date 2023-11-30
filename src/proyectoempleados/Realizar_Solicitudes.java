@@ -134,9 +134,9 @@ public class Realizar_Solicitudes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVacacionesActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-Solicitud_Permisos_y_Vacaciones Modu3 = new Solicitud_Permisos_y_Vacaciones();        // TODO add your handling code here:
+       Solicitud_Permisos_y_Vacaciones Modu3 = new Solicitud_Permisos_y_Vacaciones();        
         dispose();
-        Modu3.setVisible(true);        // TODO add your handling code here:
+        Modu3.setVisible(true);        //
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -148,7 +148,7 @@ Solicitud_Permisos_y_Vacaciones Modu3 = new Solicitud_Permisos_y_Vacaciones();  
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
       Form_Otros otros = new Form_Otros(Empleado, Cedula, Area);
       dispose();
-       otros.setVisible(true);// TODO add your handling code here:
+      otros.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
