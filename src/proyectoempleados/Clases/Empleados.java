@@ -223,7 +223,5 @@ public class Empleados {
 
     public void setAportePatronalLPT(double aportePatronalLPT) {
         this.aportePatronalLPT = aportePatronalLPT;
-    }
-
- 
+    } 
 }

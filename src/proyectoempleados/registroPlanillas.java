@@ -4,7 +4,11 @@
  */
 package proyectoempleados;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import proyectoempleados.Clases.Empleados;
 import proyectoempleados.Clases.EmpleadosDao;
 
@@ -35,9 +39,17 @@ public class registroPlanillas extends javax.swing.JFrame {
         namee = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
-        mesComboBox = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaPlan = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TotalRegistro = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        fono = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        dir = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,7 +82,7 @@ public class registroPlanillas extends javax.swing.JFrame {
                 .addComponent(planillas, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(consultaPlanilla, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,8 +110,6 @@ public class registroPlanillas extends javax.swing.JFrame {
         id.setForeground(new java.awt.Color(153, 153, 153));
         id.setText("jLabel3");
 
-        mesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
-
         tablaPlan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -113,52 +123,122 @@ public class registroPlanillas extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tablaPlan);
 
+        TotalRegistro.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(TotalRegistro);
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Registro del Empleado:");
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Telefono:");
+
+        fono.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        fono.setForeground(new java.awt.Color(153, 153, 153));
+        fono.setText("jLabel3");
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("Correo:");
+
+        dir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        dir.setForeground(new java.awt.Color(153, 153, 153));
+        dir.setText("jLabel3");
+
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel6.setText("Registro Total de Planillas:");
+
         javax.swing.GroupLayout nameeeLayout = new javax.swing.GroupLayout(nameee);
         nameee.setLayout(nameeeLayout);
         nameeeLayout.setHorizontalGroup(
             nameeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(nameeeLayout.createSequentialGroup()
-                .addGap(91, 91, 91)
+                .addGap(50, 50, 50)
                 .addGroup(nameeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane1)
                     .addGroup(nameeeLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(nameeeLayout.createSequentialGroup()
-                        .addGroup(nameeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(nameeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(namee, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
-                            .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(mesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fono, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
+                    .addGroup(nameeeLayout.createSequentialGroup()
+                        .addGroup(nameeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(nameeeLayout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(namee, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(107, 107, 107)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dir, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 32, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         nameeeLayout.setVerticalGroup(
             nameeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(nameeeLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
                 .addGroup(nameeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(namee))
+                    .addComponent(namee)
+                    .addComponent(jLabel5)
+                    .addComponent(dir))
                 .addGap(18, 18, 18)
                 .addGroup(nameeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(id)
-                    .addComponent(mesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118))
+                    .addComponent(jLabel4)
+                    .addComponent(fono))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(jButton1)
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(nameee, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(nameee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,6 +252,62 @@ public class registroPlanillas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_planillasActionPerformed
 
+       private void cargarDatosDesdeArchivo(String cedula) {
+   try (BufferedReader lector = new BufferedReader(new FileReader("RegistroDePlanillas.txt"))) {
+        DefaultTableModel model = new DefaultTableModel();
+        
+        model.addColumn("Contrato");
+        model.addColumn("Departamento");
+        model.addColumn("Puesto");
+        model.addColumn("Mes");
+        model.addColumn("Salario Bruto");
+        model.addColumn("Aporte CCSS");
+        model.addColumn("Aporte LPT");
+        model.addColumn("Horas Extras");
+        model.addColumn("Tardias");
+        model.addColumn("Ausencias");
+        model.addColumn("Salario Neto");
+
+        DefaultTableModel totalModel = new DefaultTableModel();
+                
+        totalModel.addColumn("Nombre");
+        totalModel.addColumn("Cedula");
+        totalModel.addColumn("Contrato");
+        totalModel.addColumn("Departamento");
+        totalModel.addColumn("Puesto");
+        totalModel.addColumn("Mes");
+        totalModel.addColumn("Salario Bruto");
+        totalModel.addColumn("Aporte CCSS");
+        totalModel.addColumn("Aporte LPT");
+        totalModel.addColumn("Horas Extras");
+        totalModel.addColumn("Tardias");
+        totalModel.addColumn("Ausencias");
+        totalModel.addColumn("Salario Neto");
+
+        String line;
+        while ((line = lector.readLine()) != null) {
+            String[] datos = line.split(",");
+            if (datos.length >= 6) {
+              
+                totalModel.addRow(new Object[]{
+                       datos[0],datos[1], datos[2], datos[3], datos[4], datos[5], datos[7], datos[9], datos[11], datos[13], datos[15], datos[17], datos[19]
+                });
+                if (datos[1].equals(cedula)) {
+                    model.addRow(new Object[]{
+                            datos[2], datos[3], datos[4], datos[5], datos[7], datos[9], datos[11], datos[13], datos[15], datos[17], datos[19]
+                    });
+                }
+            }
+        }
+
+        tablaPlan.setModel(model);
+        TotalRegistro.setModel(totalModel);
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al leer el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
+    
+    
     private void consultaPlanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaPlanillaActionPerformed
  String cedulaIngresada = planillas.getText().trim();
 
@@ -180,15 +316,16 @@ public class registroPlanillas extends javax.swing.JFrame {
         return;
     }
 
-    // Obtén el mes seleccionado del JComboBox
-    String mesSeleccionado = (String) mesComboBox.getSelectedItem();
-
     try {
         Empleados empleado = EmpleadosDao.consultarEmpleados("cedula", cedulaIngresada);
 
         if (empleado != null) {
             namee.setText(empleado.getNombre() + " " + empleado.getApellido());
             id.setText(empleado.getCedula());
+            fono.setText(empleado.getTeléfono());
+            dir.setText(empleado.getEmail());
+          
+               cargarDatosDesdeArchivo(cedulaIngresada);
         } else {
             limpiarLabels();
             JOptionPane.showMessageDialog(null, "No se encontró un empleado con la cédula proporcionada.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -197,6 +334,12 @@ public class registroPlanillas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Ingrese un número entero para las horas extras y ausencias.", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_consultaPlanillaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Menu menuu= new Menu();
+        menuu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
      
 
 
@@ -243,13 +386,21 @@ public class registroPlanillas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TotalRegistro;
     private javax.swing.JButton consultaPlanilla;
+    private javax.swing.JLabel dir;
+    private javax.swing.JLabel fono;
     private javax.swing.JLabel id;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JComboBox<String> mesComboBox;
     private javax.swing.JLabel namee;
     private javax.swing.JPanel nameee;
     private javax.swing.JTextField planillas;

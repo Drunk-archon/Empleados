@@ -6,7 +6,9 @@ package proyectoempleados;
 import proyectoempleados.Clases.Empleados;
 import proyectoempleados.Clases.EmpleadosDao;
 import java.awt.Color;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
@@ -84,9 +86,7 @@ public class planillaCalculada extends javax.swing.JFrame {
         ins = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPlanilla = new javax.swing.JTable();
-        jLabel15 = new javax.swing.JLabel();
-        ausen = new javax.swing.JTextField();
-        mes = new javax.swing.JComboBox<>();
+        mesSelecction = new javax.swing.JComboBox<>();
         GuardarPlanilla = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -157,7 +157,7 @@ public class planillaCalculada extends javax.swing.JFrame {
                 .addComponent(barraBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(BuscarId, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,12 +302,7 @@ public class planillaCalculada extends javax.swing.JFrame {
             tablaPlanilla.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel15.setText("Dias Ausentes:");
-
-        ausen.setText("0");
-
-        mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        mesSelecction.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Octubre", "Noviembre" }));
 
         GuardarPlanilla.setText("Guardar ");
         GuardarPlanilla.addActionListener(new java.awt.event.ActionListener() {
@@ -366,10 +361,6 @@ public class planillaCalculada extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(ausenciasLayout.createSequentialGroup()
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Salariox, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(ausenciasLayout.createSequentialGroup()
                                         .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(ausenciasLayout.createSequentialGroup()
                                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -379,25 +370,27 @@ public class planillaCalculada extends javax.swing.JFrame {
                                             .addGroup(ausenciasLayout.createSequentialGroup()
                                                 .addComponent(Contrato, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(contra))
-                                            .addGroup(ausenciasLayout.createSequentialGroup()
-                                                .addGap(111, 111, 111)
-                                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(ausen, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(contra)))
                                         .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(ausenciasLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(telef, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(ausenciasLayout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
                                                 .addComponent(ema, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(emai, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(ausenciasLayout.createSequentialGroup()
-                                                .addGap(114, 114, 114)
-                                                .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(emai, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addGroup(ausenciasLayout.createSequentialGroup()
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Salariox, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ausenciasLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(mesSelecction, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(251, 251, 251)))
                         .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ObtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -407,8 +400,6 @@ public class planillaCalculada extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(extrass, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(CargarPlanilla, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(ausenciasLayout.createSequentialGroup()
                         .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,10 +412,6 @@ public class planillaCalculada extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(pension, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(ausenciasLayout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(capitalizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ausenciasLayout.createSequentialGroup()
                                 .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(ausenciasLayout.createSequentialGroup()
                                         .addGap(6, 6, 6)
@@ -436,22 +423,31 @@ public class planillaCalculada extends javax.swing.JFrame {
                                         .addGap(13, 13, 13)
                                         .addComponent(sem, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(104, 104, 104)
-                                .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(ausenciasLayout.createSequentialGroup()
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(GuardarPlanilla, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(ausenciasLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(banco, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(capitalizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(ausenciasLayout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(banco, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ausenciasLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(ausenciasLayout.createSequentialGroup()
+                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(139, 139, 139)
+                                                .addComponent(GuardarPlanilla, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(ausenciasLayout.createSequentialGroup()
+                                        .addGap(105, 105, 105)
+                                        .addComponent(CargarPlanilla, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(ausenciasLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(478, 478, 478))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         ausenciasLayout.setVerticalGroup(
             ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,12 +505,8 @@ public class planillaCalculada extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(extrass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CargarPlanilla, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15)
-                    .addComponent(ausen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                    .addComponent(extrass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
                 .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ausenciasLayout.createSequentialGroup()
                         .addComponent(jLabel5)
@@ -527,16 +519,21 @@ public class planillaCalculada extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(ivm))
                         .addGap(48, 48, 48)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(banco))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(capitalizacion))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(banco))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(capitalizacion)))
+                    .addGroup(ausenciasLayout.createSequentialGroup()
+                        .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mesSelecction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42)
+                        .addComponent(CargarPlanilla, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
@@ -545,7 +542,7 @@ public class planillaCalculada extends javax.swing.JFrame {
                 .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(ins))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(ausenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GuardarPlanilla)
                     .addComponent(jButton2))
@@ -567,26 +564,23 @@ public class planillaCalculada extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BuscarIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarIdActionPerformed
-       // Verifica si se ha ingresado un número de cédula
     String cedulaIngresada = barraBuscar.getText().trim();
 
     if (cedulaIngresada.equals("Ingrese Cedula") || cedulaIngresada.isEmpty()) {
-        // Muestra un mensaje de error si no se ha ingresado la cédula
         JOptionPane.showMessageDialog(null, "Ingrese un número de cédula antes de cargar la planilla.", "Error", JOptionPane.ERROR_MESSAGE);
-        return; // Sale del método sin continuar con la carga de la planilla
+        return; 
     }
 
     try {
-        // Obtén el valor ingresado para las horas extras
         String horasExtrasStr = extrass.getText();
 
-        // Verifica si el valor es un número entero
+       
         int horasExtras = Integer.parseInt(horasExtrasStr);
 
-        // Busca el empleado por cédula en el archivo
+        // busca el empleado por cédula
         Empleados empleado = EmpleadosDao.consultarEmpleados("cedula", cedulaIngresada);
 
-        // Si se encuentra el empleado, actualiza los labels con sus datos
+        
         if (empleado != null) {
             Name.setText(empleado.getNombre() + " " + empleado.getApellido());
             cedu.setText(empleado.getCedula());
@@ -597,7 +591,6 @@ public class planillaCalculada extends javax.swing.JFrame {
             emai.setText(empleado.getEmail());
             Salariox.setText(empleado.getSalario());
 
-            // Calcula y muestra el salario bruto con las horas extras
             CalculadoraPlanilla calculadora = new CalculadoraPlanilla(empleado);
            
 
@@ -606,11 +599,10 @@ public class planillaCalculada extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se encontró un empleado con la cédula proporcionada.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }catch (NumberFormatException e) {
-        // Maneja la excepción si no es un número entero
         JOptionPane.showMessageDialog(null, "Ingrese un número entero para las horas extras y ausencias.", "Error", JOptionPane.ERROR_MESSAGE);
     }
       
-    // Maneja otras excepciones según sea necesario
+    
     }//GEN-LAST:event_BuscarIdActionPerformed
 
     private void barraBuscarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_barraBuscarFocusLost
@@ -627,24 +619,40 @@ public class planillaCalculada extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_barraBuscarFocusGained
 
+private boolean existePlanilla(String cedula, String mes) {
+    try (BufferedReader reader = new BufferedReader(new FileReader("RegistroDePlanillas.txt"))) {
+        String linea;
+        while ((linea = reader.readLine()) != null) {
+            String[] partes = linea.split(",");
+            if (partes.length >= 6) {  // Asegúrate de que la línea tenga al menos 6 partes
+                String cedulaRegistrada = partes[1].trim();
+                String mesRegistrado = partes[5].trim();
+                if (cedula.equals(cedulaRegistrada) && mes.equals(mesRegistrado)) {
+                    return true;  // Ya existe una planilla para este empleado en el mismo mes
+                }
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return false;  // No se encontró una planilla para este empleado en el mismo mes
+}
+    
     private void CargarPlanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarPlanillaActionPerformed
       
  try {
-        // Obtén el valor ingresado para las horas extras
+        Empleados empleado = EmpleadosDao.consultarEmpleados("cedula", barraBuscar.getText());
         String horasExtrasx = extrass.getText();
-
-        // Verifica si el valor es un número entero
         int horasExtras = Integer.parseInt(horasExtrasx);
         
-        String diasAusenciax = ausen.getText();
+        
+       
+        String mesSeleccionado = mesSelecction.getSelectedItem().toString();
 
-        // Verifica si el valor es un número entero
-        int diasAusencia = Integer.parseInt(diasAusenciax);
-
-
-        // Busca el empleado por cédula en el archivo
-        Empleados empleado = EmpleadosDao.consultarEmpleados("cedula", barraBuscar.getText());
-
+        if (existePlanilla(barraBuscar.getText(), mesSeleccionado)) {
+            JOptionPane.showMessageDialog(null, "Ya se ha creado una planilla para este empleado en el mes seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (empleado != null) {
             // Convierte el salario a tipo double
             double salario = Double.parseDouble(empleado.getSalario());
@@ -660,8 +668,9 @@ public class planillaCalculada extends javax.swing.JFrame {
             double aportePatronalCCSS = calculadora.calcularAportePatronalCCSS();
             double aportePatronalLPT = calculadora.calcularAportePatronalLPT();
             double pagoHorasExtras = calculadora.calcularHorasExtras(horasExtras);
-            double descuentoPorAusencias = calculadora.calcularDescuentoPorAusencias(diasAusencia);
-            double salarioNeto = calculadora.calcularSalarioNeto();
+            double rebajaPorHorasTardias = calculadora.rebajaTardias();
+            double descuentoPorAusencias = calculadora.calcularDescuentoPorAusencias();
+            double salarioNeto = calculadora.calcularSalarioNeto(horasExtras);
             
 
             // atualiza los label con los valores calculados
@@ -677,6 +686,7 @@ public class planillaCalculada extends javax.swing.JFrame {
             model.addRow(new Object[]{"Aporte Patronal CCSS", "-"+aportePatronalCCSS});
             model.addRow(new Object[]{"Aporte Patronal LPT", "-"+aportePatronalLPT});
             model.addRow(new Object[]{"Pago por Horas Extras", "+"+pagoHorasExtras});
+            model.addRow(new Object[]{"Rebaja Tardias", "-"+ + rebajaPorHorasTardias});
             model.addRow(new Object[]{"Rebaja por Ausencias", "-"+descuentoPorAusencias});
             model.addRow(new Object[]{"Salario Neto", salarioNeto});
 
@@ -696,17 +706,24 @@ public class planillaCalculada extends javax.swing.JFrame {
     }//GEN-LAST:event_CargarPlanillaActionPerformed
 
     private void GuardarPlanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarPlanillaActionPerformed
-       try {
-            guardarDatosEnArchivo();
+     try {
+        String mesSeleccionado = mesSelecction.getSelectedItem().toString();
+        String clave = barraBuscar.getText() + mesSeleccionado;
 
-            // Resto del código...
+        if (existePlanilla(barraBuscar.getText(), mesSeleccionado)) {
+            JOptionPane.showMessageDialog(null, "Ya se ha creado una planilla para este empleado en el mes seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+           guardarDatosEnArchivo();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Ingrese un número entero para las horas extras.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_GuardarPlanillaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        Menu menuu= new Menu();
+        menuu.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
         private void limpiarLabels() {
             Name.setText("");
@@ -718,50 +735,41 @@ public class planillaCalculada extends javax.swing.JFrame {
             emai.setText("");
         }
        private void guardarDatosEnArchivo() {
-        try (BufferedWriter escritor = new BufferedWriter(new FileWriter("RegistroDePlanilla.txt", true))) {
+         try (BufferedWriter escritor = new BufferedWriter(new FileWriter("RegistroDePlanillas.txt", true))) {
            
             String nombre = Name.getText();
             String cedula = cedu.getText();
             String contrato = contra.getText();
             String departamento = Depa.getText();
             String puestos = puesto.getText();
-            String mesSeleccionado = mes.getSelectedItem().toString();
-
-            
+            String mesSeleccionado = mesSelecction.getSelectedItem().toString();
             String clave = cedula + mesSeleccionado;
+            
             if (empleadosProcesados.contains(clave)) {
                 JOptionPane.showMessageDialog(null, "Este empleado ya ha sido procesado para el mes seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
            
-            escritor.write(nombre + "," + cedula + "," + contrato + "," + departamento + "," + puestos + "," + mesSeleccionado + "," );
-            escritor.newLine();
-
-            
-            empleadosProcesados.add(clave);
-
-            
-            guardarDatosTablaEnArchivo(escritor);
-
-            JOptionPane.showMessageDialog(null, "Datos guardados correctamente ", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error al intentar guardar los datos en el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-          private void guardarDatosTablaEnArchivo(BufferedWriter escritor) throws IOException {
-       
+            escritor.write(nombre + "," + cedula + "," + contrato + "," + departamento + "," + puestos + "," + mesSeleccionado + ",");
+        
+        // Agregar datos de la tabla al final de la línea
         DefaultTableModel modelo = (DefaultTableModel) tablaPlanilla.getModel();
-
-       // agrega los datos al archivo
         for (int fila = 0; fila < modelo.getRowCount(); fila++) {
             for (int columna = 0; columna < modelo.getColumnCount(); columna++) {
                 escritor.write(modelo.getValueAt(fila, columna).toString() + ",");
             }
-            escritor.newLine();
         }
-    } 
-       
+        
+        escritor.newLine();
+
+        empleadosProcesados.add(clave);
+
+        JOptionPane.showMessageDialog(null, "Datos guardados correctamente ", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al intentar guardar los datos en el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }       
         /**
      * @param args the command line arguments
      */
@@ -815,7 +823,6 @@ public class planillaCalculada extends javax.swing.JFrame {
     private javax.swing.JLabel ObtPues;
     private javax.swing.JLabel ObtTel;
     private javax.swing.JLabel Salariox;
-    private javax.swing.JTextField ausen;
     private javax.swing.JPanel ausencias;
     private javax.swing.JLabel banco;
     private javax.swing.JTextField barraBuscar;
@@ -834,7 +841,6 @@ public class planillaCalculada extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -845,7 +851,7 @@ public class planillaCalculada extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> mes;
+    private javax.swing.JComboBox<String> mesSelecction;
     private javax.swing.JLabel pension;
     private javax.swing.JLabel puesto;
     private javax.swing.JLabel sem;

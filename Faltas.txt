@@ -18,3 +18,8 @@
 333333333,2023-11-02,Tardia,1,.
 604840817,2023-10-10,Justificada,3,estaba estudiando y eso es importante
 604840817,2023-10-16,Injustificada,8,dijo que los lunes no se trabajan
+444444444,2023-10-05,Injustificada,8,Le dio pereza ir, se fue de fiesta el dia anterior, y amanecio de goma.
+444444444,2023-10-05,Injustificada,8,nada
+444444444,2023-10-23,Tardia,6,Se quedo dormido
+604500960,2023-11-01,Injustificada,8,Le valio verg
+604500960,2023-10-01,Injustificada,8,.

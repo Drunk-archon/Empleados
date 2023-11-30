@@ -7,3 +7,5 @@ Kevin,Torres,444444444,20/05/1995,Direccion10,87654321,vin44@outlook.com,04/04/2
 Ignacia,Vargas,555555555,05/09/1980,Direccion11,65432109,navag505@live.com,05/05/2022,Especialista en Capacitación,Recursos Humanos,Contrato Temporal,Bachiller universitario,200033
 Jordy,Vindas,604840811,12/12/1212,dasfa,12344556,gma.com,12/12/21,Gestor de Personal,Recursos Humanos,Contrato por Proyecto,Trabajador en ocupacion semicalificada,12000
 Jordy,Vindas,604840817,12/12/2123,En tu corazon,12345678,Jordy.vindash,12/12/3221,Analista de Sistemas,Informática,Medio Tiempo,Tecnico medio,415200.76
+Peter,sequeira,604500960,01/23/1999,cacao city,88009977,pitsix23@gmail.com,22/05/2005,Responsable de Formación y Desarrollo,Informática,Tiempo Completo,Licenciado universitario,752220.04
+Juan,vindas,604840812,11/21/1121,La esscruadra,85789471,gmail.com,12/12/2321,Responsable de Formación y Desarrollo,Informática,Tiempo Completo,Diplomado en educacion superior,396210.87

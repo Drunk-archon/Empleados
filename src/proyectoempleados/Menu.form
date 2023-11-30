@@ -73,6 +73,7 @@
                       <Component id="jButton3" alignment="0" min="-2" pref="366" max="-2" attributes="0"/>
                       <Component id="jButton4" alignment="0" min="-2" pref="366" max="-2" attributes="0"/>
                       <Component id="jButton5" alignment="0" min="-2" pref="366" max="-2" attributes="0"/>
+                      <Component id="Metodo3" min="-2" pref="366" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="159" max="32767" attributes="0"/>
               </Group>
@@ -99,17 +100,19 @@
                   <Component id="jLabel1" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="Metodo2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="Metodo3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -177,7 +180,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Metodo2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Planilla"/>
+            <Property name="text" type="java.lang.String" value="Crear Planillas"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Metodo2ActionPerformed"/>
@@ -214,6 +217,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Por favor seleccione una opcion."/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="Metodo3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Registro de Planillas"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Metodo3ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
