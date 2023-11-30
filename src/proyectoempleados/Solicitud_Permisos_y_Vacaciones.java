@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package proyectoempleados;
 
 import java.io.BufferedReader;
@@ -9,10 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author manua
- */
+
 public class Solicitud_Permisos_y_Vacaciones extends javax.swing.JFrame {
     private String Empleado;
     private String Cedula;

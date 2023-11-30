@@ -226,10 +226,11 @@ public class Consultar extends javax.swing.JFrame {
       dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-
+//si no se ssleciona naada no filtra
 private void quitarFiltros() {
     Filtro.setRowSorter(null);
 }
+//applica un filtro de busqueda segun lo que se solicita
 private void aplicarFiltro(String columna, String textoFiltrar) {
    DefaultTableModel modeloOriginal = (DefaultTableModel) Filtro.getModel();
     TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(modeloOriginal);

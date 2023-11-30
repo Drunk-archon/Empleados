@@ -27,7 +27,7 @@ public class Agregar extends javax.swing.JFrame {
         llenarComboBox();
         
     }
-     
+     //segun la categoria seleccionada se le asigna un salario minimo 
         private double asignarSalarioSegunCategoria(String categoria) {
         // Normaliza la cadena eliminando espacios al principio y al final
         categoria = categoria.trim();
@@ -54,7 +54,7 @@ public class Agregar extends javax.swing.JFrame {
         }
     }
     
-    
+    // metodo que llena las opciones de los comobox
     private void llenarComboBox() {
     // Llena el combo box de puestos
     puesto.setModel(new javax.swing.DefaultComboBoxModel<>(EmpleadosDao.obtenerPuestosDisponibles().toArray(new String[0])));
@@ -450,7 +450,7 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        //lectura de atributos necesarios para agregar un empleado, asi como validaciioens
             String nombree = nombre.getText();
             String apellidoos = apellidos.getText();
             String cedulaa = cedula.getText();
@@ -634,7 +634,7 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     
-    
+    //elimina la informacion una ves agregada
     
     private void limpiarCampos() {
     nombre.setText("");

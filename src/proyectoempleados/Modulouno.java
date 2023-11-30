@@ -16,6 +16,7 @@ public class Modulouno extends javax.swing.JFrame {
     
     public Modulouno() {
         initComponents();
+        // lectura de los datos para la tabla 
         empleadosDao = new EmpleadosDao();
         
         Tablemodel = new DefaultTableModel();
@@ -238,7 +239,7 @@ public class Modulouno extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
+       // validaciones para que se selecione un usuario 
  
        String[] datosEmpleado = obtenerDatosEmpleadoSeleccionado();
 
@@ -252,7 +253,7 @@ public class Modulouno extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+        // instacia 
         
        Consultar agre = new Consultar();
        dispose ();
@@ -262,6 +263,7 @@ public class Modulouno extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
    private String[] obtenerDatosEmpleadoSeleccionado() {
+       // Obtiene los datos del empleado que se seleciono
     int filaSeleccionada = Emplea.getSelectedRow();
     if (filaSeleccionada != -1) {
         String[] datosEmpleado = new String[13]; // Ajusta el tamaño según la cantidad de columnas

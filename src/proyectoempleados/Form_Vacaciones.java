@@ -252,7 +252,7 @@ public class Form_Vacaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-Realizar_Solicitudes soli = new Realizar_Solicitudes(Empleado, Cedula, Area);
+        Realizar_Solicitudes soli = new Realizar_Solicitudes(Empleado, Cedula, Area);
         dispose();
         soli.setVisible(true);                // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed

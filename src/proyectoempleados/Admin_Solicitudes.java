@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package proyectoempleados;
 
 import java.io.BufferedReader;
@@ -36,6 +33,7 @@ public class Admin_Solicitudes extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     
+    // se leen las solicitudes creadas por los empleados
     private void cargarSolicitudes() {
         String tipo = (String) tipoSolicitudComboBox.getSelectedItem();
         String nombreArchivo = tipo + "_Solicitudes.txt";
@@ -55,7 +53,7 @@ public class Admin_Solicitudes extends javax.swing.JFrame {
         solicitudesList.setModel(modeloListaSolicitudes);
     }
 
-    
+    //metodos para aprobar o negar las solicitudes a los usuarios 
     private void procesarSolicitud(boolean aprobar) {
         String tipo = (String) tipoSolicitudComboBox.getSelectedItem();
         String nombreArchivo = tipo + "_Solicitudes.txt";

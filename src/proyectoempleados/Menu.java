@@ -5,7 +5,7 @@ import IU.Escala;
 
 
 public class Menu extends javax.swing.JFrame {
-
+   // Se realizaron las instancias para llamar a los distintos metodos
     
     public Menu() {
         initComponents();

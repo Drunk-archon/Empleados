@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package proyectoempleados;
 import proyectoempleados.Clases.Empleados;
 import proyectoempleados.Clases.EmpleadosDao;
@@ -618,7 +615,7 @@ public class planillaCalculada extends javax.swing.JFrame {
             barraBuscar.setForeground(new Color(0,0,0));
         }
     }//GEN-LAST:event_barraBuscarFocusGained
-
+// verifica que exitan plantillas
 private boolean existePlanilla(String cedula, String mes) {
     try (BufferedReader reader = new BufferedReader(new FileReader("RegistroDePlanillas.txt"))) {
         String linea;
@@ -637,7 +634,7 @@ private boolean existePlanilla(String cedula, String mes) {
     }
     return false;  // No se encontró una planilla para este empleado en el mismo mes
 }
-    
+    // permite cargar plantillas que ya esta en la base
     private void CargarPlanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarPlanillaActionPerformed
       
  try {
@@ -705,6 +702,7 @@ private boolean existePlanilla(String cedula, String mes) {
         
     }//GEN-LAST:event_CargarPlanillaActionPerformed
 
+    //nos permite guadar en el txt
     private void GuardarPlanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarPlanillaActionPerformed
      try {
         String mesSeleccionado = mesSelecction.getSelectedItem().toString();

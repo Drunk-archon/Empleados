@@ -6,12 +6,14 @@ package proyectoempleados;
  * @author manua
  */
 public class Realizar_Solicitudes extends javax.swing.JFrame {
+    //declaracion de atributos 
     private String Empleado;
     private String Cedula;
     private String Area;
    
     
     public Realizar_Solicitudes(String Empleado, String Cedula, String Area) {
+        //costrutor
         this.Empleado= Empleado;
         this.Cedula= Cedula;
         this.Area= Area;
@@ -128,6 +130,7 @@ public class Realizar_Solicitudes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVacacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVacacionesActionPerformed
+    //instancia a la cual se le atribuyen valores 
     Form_Vacaciones vacaciones = new Form_Vacaciones(Empleado, Cedula, Area); 
     dispose();
     vacaciones.setVisible(true);// TODO add your handling code here:
