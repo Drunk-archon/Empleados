@@ -191,9 +191,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Realizar_Solicitudes solicitud = new Realizar_Solicitudes("","","");
-        solicitud.setVisible(true);
-        
+       Solicitud_Permisos_y_Vacaciones soli = new Solicitud_Permisos_y_Vacaciones();
+       soli.setVisible(true);
+       dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
    
